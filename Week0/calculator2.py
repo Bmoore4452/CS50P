@@ -1,6 +1,7 @@
-x = input("What is x? ")
-y = input("What is y? ")
+x = float(input("What is x? "))
+y = float(input("What is y? "))
 
-z = int(x) + int(y)
+z = round(x + y)
 
-print(z)
+# Adds comma after three digits
+print(f"{z:,}")
