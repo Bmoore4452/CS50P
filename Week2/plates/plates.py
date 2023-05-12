@@ -7,26 +7,25 @@ def main():
 
 
 def is_valid(s):
-    if check_length(s):
-        if check_order(s):
-            return True
-
-
-def check_length(s):
-    if len(s) <= 6 and len(s) >= 2:
-        if s.isalnum():
-            return True
-
-
-def check_order(s):
+    # Check if input length is more than two and less than six
+    if not (len(s) <= 6 and len(s) >= 2):
+        return False
+    # Check if the input does not contain special characters
+    if s.isalnum() == False:
+        return False
+    # Check if the first character is 0
+    if s[0] == 0:
+        return False
+    # If a number is found make sure the rest of the string is also a number
     for i in range(len(s)):
-        if s[0].isdigit():
-            if int(s[i]) == 0:
+        if s[i] == "0":
+            if s[i:] != "0":
                 return False
-        elif not (s[i + 1 : :].isalpha()) == False:
-            return False
-        else:
-            return True
+        if s[i].isdigit():
+            if not s[i:].isdigit():
+                return False
+    else:
+        return True
 
 
 main()
