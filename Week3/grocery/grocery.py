@@ -19,7 +19,7 @@ def main():
             print()
             for i, j in sorted(grocery_list.items()):
                 print(j, i.upper())
-            return print
+            return print()
 
 
 main()
