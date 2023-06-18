@@ -8,7 +8,9 @@ import random
 
 cards = ["jack", "king", "queen"]
 
-random.shuffle(cards)
+y = random.sample(population=cards, k=2)
 
-for card in cards:
-    print(card)
+# for card in cards:
+#     print(card)
+
+print(y)

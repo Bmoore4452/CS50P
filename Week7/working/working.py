@@ -29,7 +29,7 @@ def convert(s):
             if int(hour1) > 12 or int(hour2) > 12:
                 raise ValueError()
             if to != "to":
-                raise ValueError
+                raise ValueError()
         else:
             minute1 = "00"
             minute2 = "00"
