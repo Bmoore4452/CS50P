@@ -73,23 +73,25 @@ special_characters = [
 
 
 def main():
-    length_of_password = get_length()
+    length = int(input("How many characters do you want in your password? "))
+    length_of_password = get_length(length)
     while count == 0:
         alpha()
         upper()
         number()
         special()
         if count != 0:
-            y = random.sample(population=password_pool, k=length_of_password)
-            print("Password: ", *y, sep="")
+            y = "".join(
+                [random.choice(password_pool) for _ in range(length_of_password)]
+            )
+            print("Password:", y)
         else:
             print("Please select at least one condition")
 
 
-def get_length():
+def get_length(length):
     while True:
         try:
-            length = int(input("How many characters do you want in your password? "))
             if length < 8 or length > 128:
                 print("Number must be between 8 and 128")
             else:
